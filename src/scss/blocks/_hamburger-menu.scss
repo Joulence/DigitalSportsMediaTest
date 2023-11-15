@@ -1,0 +1,19 @@
+#hamburger-menu {
+  display: none;
+  background: red;
+  width: 3%;
+  height: 30px;
+}
+
+#hamburger-menu, #close-menu {
+  background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1024px) {
+  #hamburger-menu {
+    display: block;
+  }
+}
