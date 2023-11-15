@@ -46,9 +46,15 @@ ul {
   margin: 0;
 }
 
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .menu-open {
   background: #212121;
-  opacity: .3;
+  opacity: 0.3;
 }
 
 @media (max-width: 1024px) {
