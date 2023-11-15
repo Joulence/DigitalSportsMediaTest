@@ -5,6 +5,7 @@
 @import "./blocks/header";
 @import "./blocks/hamburger-menu";
 @import "./blocks/nav-sidebar";
+@import "./blocks/forecasts";
 
 * {
   padding: 0;
@@ -32,7 +33,7 @@ h6 {
 }
 
 .container {
-  max-width: 1024px;
+  max-width: 1128px;
   margin: 0 auto;
 }
 
@@ -50,6 +51,7 @@ button {
   background: transparent;
   border: none;
   cursor: pointer;
+  font-family: "Inter", sans-serif;
 }
 
 .menu-open {
