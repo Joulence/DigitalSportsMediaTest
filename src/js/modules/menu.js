@@ -1,24 +1,15 @@
 export function onclick() {
-    let hamMenu = document.getElementById("hamMenu");
-    let navMenu = document.getElementById("nav")
-    hamMenu.addEventListener("click", btnPressed);
-    hamMenu.addEventListener("click", showMenu);
+  let openMenuBtn = document.getElementById("hamburger-menu");
+  let closeMenuBtn = document.getElementById("close-menu");
+  let navMenu = document.getElementById("nav-sidebar");
 
-    function btnPressed() {
-        let isHavMenu = (hamMenu.classList.length > 1) ?
-        hamMenu.classList.remove("is-open") :
-        hamMenu.classList.add("is-open");
-        return isHavMenu;
-      }
+  openMenuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+    document.querySelector("header").classList.toggle("menu-open");
+  });
 
-      function showMenu() {
-        let x = document.getElementById("myLinks");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-          navMenu.style.background = "";
-        } else {
-          x.style.display = "block";
-          navMenu.style.background = "#fff";
-        }
-      }
+  closeMenuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+    document.querySelector("header").classList.toggle("menu-open");
+  });
 }
