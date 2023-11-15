@@ -1,19 +1,25 @@
-@import './base/variables';
-@import './base/mixins';
-@import './base/fonts';
+@import "./base/variables";
+@import "./base/mixins";
+@import "./base/fonts";
 
+@import "./blocks/header";
+@import "./blocks/hamburger-menu";
+@import "./blocks/nav-sidebar";
 
 * {
-    padding: 0;
-    box-sizing: border-box;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
+  margin: 0;
+  background: #f3f6f9;
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
 }
 
 h1,
@@ -22,18 +28,32 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
+  margin: 0;
 }
 
-/* .container {
-    padding: 0 4%;
-} */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
 
 a {
-    color: #212121;
+  color: #212121;
+  text-decoration: none;
 }
 
 ul {
-    list-style: none;
-    margin: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.menu-open {
+  background: #212121;
+  opacity: .3;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
 }
