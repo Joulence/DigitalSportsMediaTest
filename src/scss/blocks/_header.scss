@@ -61,6 +61,11 @@
         position: absolute;
         right: -15px;
         background: #fff;
+        li {
+          &:hover {
+            color: $light-blue;
+          }
+        }
       }
     }
   }
