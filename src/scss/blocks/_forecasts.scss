@@ -12,14 +12,16 @@
         align-items: baseline;
         gap: 20px;
         button {
+          color: $blue;
           font-size: 14px;
           font-weight: 900;
           &.selected {
             border-bottom: 3px $blue solid;
             padding-bottom: 4px;
+            color: #212121;
           }
           &:hover {
-            color: $blue;
+            color: #212121;
           }
         }
       }
