@@ -1,5 +1,5 @@
 @import "./base/variables";
-@import "./base/mixins";
+@import "./base/additional";
 @import "./base/fonts";
 
 @import "./blocks/header";
@@ -53,19 +53,6 @@ button {
   border: none;
   cursor: pointer;
   font-family: "Inter", sans-serif;
-}
-
-.menu-open {
-  background: #212121;
-  opacity: 0.3;
-}
-
-.title {
-  font-size: 20px;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 @media (max-width: 1140px) {
