@@ -1,5 +1,7 @@
 .match {
   &__inner {
+    display: flex;
+    gap: 24px;
     h2 {
       margin-bottom: 25px;
     }
