@@ -95,7 +95,7 @@
         } */
 
         &-list {
-          margin-top: 25px;
+          margin-top: 22px;
           .scored,
           .in-live {
             color: #fd6230;
@@ -111,25 +111,65 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            // TODO
-            padding: 14px 18px 14px 16px;
+            padding: 12px 10px 12px 16px;
             background: #fff;
             box-sizing: border-box;
             border-radius: 12px;
             font-size: 14px;
             font-weight: 400;
+            box-shadow: 0px 4px 12px 0px rgba(99, 112, 147, 0.12);
+
+            &.match-live {
+              .match-container {
+                &.match-time {
+                  div {
+                    display: flex;
+                    gap: 13px;
+                    span {
+                      color: #fd6230;
+                      &:first-child {
+                        font-weight: 700;
+                      }
+                    }
+                  }
+                }
+                &.match-separator {
+                  color: #fd6230;
+                }
+                &.match-team-container {
+                  .match-score {
+                    color: #fd6230;
+                  }
+                }
+              }
+            }
+
+            &.match-scored {
+              .match-container {
+                &.match-separator {
+                  color: #212121;
+                }
+                &.match-team-container {
+                  .match-score {
+                    color: #212121;
+                  }
+                }
+              }
+            }
 
             .match-container {
               display: flex;
               flex-direction: row;
 
               &.match-time {
+                width: 120px;
                 span {
                   color: #637093;
                 }
               }
 
               &.match-forc {
+                width: auto;
                 a {
                   display: flex;
                   align-items: center;
@@ -148,12 +188,15 @@
 
               &.match-time,
               &.match-forc {
-                width: auto;
                 flex-shrink: 0;
               }
 
               &.match-time a {
                 display: none;
+              }
+
+              &.match-no-forc {
+                visibility: hidden;
               }
 
               &.match-team-container {
@@ -209,6 +252,15 @@
                 color: rgba(99, 112, 147, 0.3);
                 font-size: 18px;
                 font-weight: 900;
+                flex-direction: column;
+                align-items: center;
+                span {
+                  &:last-child {
+                    color: #637093;
+                    font-size: 14px;
+                    font-weight: 400;
+                  }
+                }
               }
             }
           }
