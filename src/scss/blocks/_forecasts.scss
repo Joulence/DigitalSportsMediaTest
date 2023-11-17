@@ -70,7 +70,7 @@
       display: block;
       max-width: 204px;
       text-align: center;
-      margin: 33px auto;
+      margin: 33px auto 0;
       font-size: 14px;
       padding: 7px 12px 7px 20px;
       border-radius: 20px;
@@ -109,10 +109,6 @@
       flex-direction: column;
       gap: 12px;
       align-content: center;
-    }
-
-    &-more {
-      margin: 30px auto 0;
     }
   }
 }

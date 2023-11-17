@@ -9,6 +9,9 @@
     &-logo {
       width: 165px;
     }
+    nav {
+      width: 640px;
+    }
     &-links {
       display: flex;
       align-items: center;
@@ -46,6 +49,7 @@
       }
     }
     &-language {
+      width: 70px;
       cursor: pointer;
       position: relative;
       &:hover {
