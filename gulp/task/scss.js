@@ -1,7 +1,7 @@
 import dartSass from "sass";
 import gulpSass from "gulp-sass";
 import rename from "gulp-rename";
-import replace from 'gulp-string-replace';
+import replace from "gulp-string-replace";
 
 import cleanCss from "gulp-clean-css"; // Css compression
 import webpcss from "gulp-webpcss"; // Show webp images
@@ -22,7 +22,7 @@ export const scss = () => {
           })
         )
       )
-      .pipe(app.plugins.replace(/@img\//g, "../img/"))
+      // .pipe(app.plugins.replace(/@img\//g, "../img/"))
       .pipe(
         sass({
           outputStyle: "compressed",
@@ -31,7 +31,7 @@ export const scss = () => {
 
       .pipe(app.plugins.if(app.isBuild, groupCssmediaQueries()))
 
-      .pipe(
+/*       .pipe(
         app.plugins.if(
           app.isBuild,
           webpcss({
@@ -39,7 +39,7 @@ export const scss = () => {
             noWebpClass: ".no-webp",
           })
         )
-      )
+      ) */
 
       .pipe(
         app.plugins.if(
@@ -53,11 +53,9 @@ export const scss = () => {
       )
       .pipe(
         // Use gulp-replace to remove spaces after semicolons in the @import statement
-        app.plugins.if(
-          app.isBuild,
-          replace(/;\s+/g, ';')
-        )
+        app.plugins.if(app.isBuild, replace(/;\s+/g, ";"))
       )
+
       // If you don't need compressed css - uncomment it
       /* .pipe(app.gulp.dest(app.path.build.css)) */
       .pipe(app.plugins.if(app.isBuild, cleanCss()))
@@ -66,6 +64,7 @@ export const scss = () => {
           extname: ".min.css",
         })
       )
+      // .pipe(app.plugins.if(app.isBuild, replace("../img/", "./img/")))
       .pipe(app.gulp.dest(app.path.build.css))
       .pipe(app.plugins.browsersync.stream())
   );
