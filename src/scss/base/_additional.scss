@@ -20,6 +20,11 @@
     padding-bottom: 4px;
     color: #212121;
   }
+  &.selected-sport {
+    border-bottom: 2px $blue solid;
+    padding-bottom: 3px;
+    color: #212121;
+  }
   &:hover {
     color: #212121;
   }
