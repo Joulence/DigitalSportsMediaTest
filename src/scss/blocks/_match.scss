@@ -47,18 +47,20 @@
       }
     }
     &-center {
+      max-width: 840px;
+      width: 100%;
       .match {
         &-sports {
           display: flex;
-          align-items: baseline;
+          align-items: center;
           gap: 40.4px;
         }
         &-buttons {
-          align-items: flex-start;
+          align-items: center;
           display: flex;
           ul {
             line-height: 0;
-            align-items: baseline;
+            align-items: center;
             display: flex;
             gap: 24px;
           }
@@ -79,21 +81,6 @@
             }
           }
         }
-
-        /* &-list {
-          table {
-            width: 100%;
-            td {
-              width: 128px;
-            }
-            .table {
-              &-forecast {
-                float: right;
-              }
-            }
-          }
-        } */
-
         &-list {
           margin-top: 22px;
           .scored,
@@ -193,10 +180,23 @@
 
               &.match-time a {
                 display: none;
+                align-items: center;
+                color: $blue;
+                font-weight: 700;
+                gap: 4px;
+                width: 99px;
+                height: 31px;
+                border-radius: 40px;
+                justify-content: center;
+                &:hover {
+                  background: #5685ff08;
+                }
               }
 
               &.match-no-forc {
-                visibility: hidden;
+                a {
+                  visibility: hidden;
+                }
               }
 
               &.match-team-container {
@@ -264,129 +264,135 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
 
-          @media (max-width: 1024px) {
-            .match-wrapper {
-              flex-direction: column;
-              // TODO
-              padding: 0;
+@media (max-width: 1140px) {
+  .match__inner {
+    .match-sports {
+      gap: 20px;
+    }
+    &-center {
+      .match-buttons {
+        .match-live {
+          margin-right: 24px;
+        }
+        .match-calendar {
+          margin-left: 24px;
+        }
+      }
+    }
+  }
+}
 
-              .match-container {
-                width: 100%;
+@media (max-width: 1024px) {
+  .match__inner {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 70px;
+    &-league {
+      width: 100%;
+      h2 {
+        padding-left: 0;
+        justify-content: center;
+      }
+    }
+    &-center {
+      width: 100%;
+      max-width: 840px;
 
-                &.match-time {
-                  width: 100%;
-                  justify-content: space-between;
-                  border-bottom: 1px solid black;
-                  padding: 8px 16px;
+      .match-sports {
+        flex-direction: column;
+      }
 
-                  a {
-                    display: flex;
+      .match-buttons {
+        .match-calendar {
+          margin-left: 0;
+          order: 1;
+          margin-right: 20px;
+        }
+        .match-live {
+          order: 2;
+          margin-right: 20px;
+        }
+        ul {
+          order: 3;
+          gap: 20px;
+        }
+      }
+
+      .match-list {
+        .match-wrapper {
+          font-size: 12px;
+          flex-direction: column;
+          padding: 0;
+
+          .match-container {
+            width: 100%;
+
+            &.match-time {
+              width: 100%;
+              justify-content: space-between;
+              border-bottom: 1px solid rgba(99, 112, 147, 0.12);
+              padding: 8px 16px;
+              align-items: center;
+
+              a {
+                display: flex;
+              }
+            }
+
+            &.match-team-container {
+              width: 100%;
+              justify-content: space-between;
+
+              &.team-1 {
+                justify-content: space-between;
+                padding: 12px 16px 4px;
+              }
+
+              &.team-2 {
+                flex-direction: row-reverse;
+                padding: 4px 16px 12px;
+              }
+
+              .match-team {
+                display: flex;
+                flex-direction: row-reverse;
+              }
+
+              .match-score {
+                width: auto;
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+                gap: 17px;
+                span {
+                  &:last-child {
+                    font-size: 18px;
                   }
-                }
-
-                &.match-team-container {
-                  width: 100%;
-                  justify-content: space-between;
-
-                  &.team-1 {
-                    justify-content: space-between;
-                    padding: 12px 16px 4px;
-                  }
-
-                  &.team-2 {
-                    flex-direction: row-reverse;
-                    padding: 4px 16px 12px;
-                  }
-
-                  .match-team {
-                    display: flex;
-                    flex-direction: row-reverse;
-                  }
-
-                  .match-score {
-                    width: auto;
-                    flex-direction: row;
-                    justify-content: flex-end;
-                  }
-                }
-
-                &.match-separator,
-                &.match-forc {
-                  display: none;
                 }
               }
             }
+
+            &.match-separator,
+            &.match-forc {
+              display: none;
+            }
           }
-
-          // .match-wrapper {
-          //   width: 100%;
-          //   display: flex;
-          //   justify-content: flex-start;
-          //   align-items: center;
-
-          //   .match-container {
-          //     width: 50%;
-          //     flex-direction: row;
-          //     justify-content: space-between;
-          //     align-items: center;
-          //     flex-shrink: 1;
-
-          //     &.container-middle {
-          //       width: 100px;
-          //       justify-content: center;
-          //       flex-shrink: 0;
-          //     }
-          //   }
-          // }
-
-          // li {
-          //   background: #fff;
-          //   padding: 16px;
-          //   border-radius: 12px;
-          //   font-size: 14px;
-          //   font-weight: 400;
-          //   // display: flex;
-          //   align-items: center;
-          //   justify-content: space-between;
-          //   div {
-          //     display: flex;
-          //     align-items: center;
-          //     gap: 32px;
-          //   }
-          //   .match-team-1,
-          //   .match-team-2,
-          //   .match-forecast {
-          //     display: flex;
-          //     align-items: center;
-          //   }
-          //   .match-team-1,
-          //   .match-team-2 {
-          //     gap: 8px;
-          //   }
-          //   .match-date {
-          //     color: #637093;
-          //   }
-          //   .match-score {
-          //     color: rgba(99, 112, 147, 0.3);
-          //     font-size: 18px;
-          //     font-weight: 900;
-          //   }
-          //   .match-forecast {
-          //     color: $blue;
-          //     font-weight: 700;
-          //     gap: 4px;
-          //     width: 99px;
-          //     height: 31px;
-          //     border-radius: 40px;
-          //     justify-content: center;
-          //     &:hover {
-          //       background: #5685ff08;
-          //     }
-          //   }
-          // }
         }
       }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .match__inner-center {
+    .match-buttons {
+      width: 100%;
+      overflow: scroll;
     }
   }
 }

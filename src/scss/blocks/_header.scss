@@ -6,6 +6,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &-logo {
+      width: 165px;
+    }
     &-links {
       display: flex;
       align-items: center;
@@ -73,6 +76,9 @@
 
 @media (max-width: 1024px) {
   .header {
+    &__inner-logo {
+      width: 145px;
+    }
     nav {
       display: none;
     }

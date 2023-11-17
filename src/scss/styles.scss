@@ -11,6 +11,7 @@
 * {
   padding: 0;
   box-sizing: border-box;
+  transition: all .1s ease-in-out;
 }
 
 html {
@@ -55,9 +56,19 @@ button {
   font-family: "Inter", sans-serif;
 }
 
+main {
+  padding-bottom: 63px;
+}
+
 @media (max-width: 1140px) {
   .container {
     max-width: 100%;
     padding: 0 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 12px;
   }
 }

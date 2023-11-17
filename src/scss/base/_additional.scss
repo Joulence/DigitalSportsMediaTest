@@ -1,6 +1,14 @@
 .menu-open {
-  background: #212121;
-  opacity: 0.3;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #212121;
+    left: 0;
+    top: 0;
+    opacity: 0.32;
+  }
 }
 
 .title {
@@ -16,16 +24,22 @@
   font-size: 14px;
   font-weight: 900;
   &.selected {
-    border-bottom: 3px $blue solid;
-    padding-bottom: 4px;
+    text-underline-offset: 6px;
+    text-decoration: underline $blue;
+    text-decoration-thickness: 3px;
     color: #212121;
   }
   &.selected-sport {
-    border-bottom: 2px $blue solid;
-    padding-bottom: 3px;
+    text-underline-offset: 3px;
+    text-decoration: underline $blue;
+    text-decoration-thickness: 2px;
     color: #212121;
   }
   &:hover {
     color: #212121;
   }
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }

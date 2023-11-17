@@ -16,7 +16,7 @@
     &-events {
       margin-top: 27px;
       display: flex;
-      align-items: center;
+      align-items: stretch;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 24px;
@@ -31,7 +31,7 @@
           left: calc(50% - 63px);
           padding: 4px 12px;
           position: absolute;
-          top: -12px;
+          top: -8px;
           border-radius: 12px;
           background: #fedb0d;
           border: 3px solid #fd6230;
@@ -44,6 +44,7 @@
           border-radius: 12px 12px 0px 0px;
           background-image: url("../img/forecasts/bg.png");
           background-repeat: no-repeat;
+          background-size: contain;
         }
         &-info {
           padding: 16px 20px 20px;
@@ -98,11 +99,28 @@
       flex-direction: column;
       align-items: center;
       gap: 16px;
+      h2 {
+        padding-top: 16px;
+      }
     }
 
     &-events {
+      margin-top: 16px;
       flex-direction: column;
       gap: 12px;
+      align-content: center;
+    }
+
+    &-more {
+      margin: 30px auto 0;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .forecasts__inner-events {
+    .card-info {
+      padding-top: 0;
     }
   }
 }
